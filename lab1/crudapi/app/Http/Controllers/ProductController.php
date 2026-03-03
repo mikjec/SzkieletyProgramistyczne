@@ -32,8 +32,11 @@ class ProductController extends Controller
             'price' => 'required|numeric|min:0|max:100000',
         ]);
         if ($validator->fails()) {
-            //dane niepoprawne:
-            return ($validator->errors());
+            //dane niepoprawne – zwracamy status 422 z ‘message’ i listą ‘errors’
+            return response()->json([
+                'message' => 'The given data was invalid.',
+                'errors' => $validator->errors()
+            ], 422);
         }
         //dane poprawne:
         $product = new Product();
@@ -70,6 +73,19 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         if ($product !== null) {
+
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|regex:/^[A-Za-z]{1,30}$/i',
+                'price' => 'required|numeric|min:0|max:100000',
+            ]);
+            if ($validator->fails()) {
+                //dane niepoprawne – zwracamy status 422 z ‘message’ i listą ‘errors’
+                return response()->json([
+                    'message' => 'The given data was invalid.',
+                    'errors' => $validator->errors()
+                ], 422);
+            }
+
             $product->name = $request->input('name');
             $product->price = $request->input('price');
             $product->save();
