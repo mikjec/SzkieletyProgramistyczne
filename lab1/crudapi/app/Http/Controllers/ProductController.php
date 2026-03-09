@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Collection;
 
 class ProductController extends Controller
 {
@@ -104,5 +105,16 @@ class ProductController extends Controller
             $product->delete();
             return $product;
         } else return "Nie istnieje w bazie obiekt o podanym id=$id";
+    }
+
+    /**
+     * Search for a name.
+     *
+     * @param string $name
+     * @return \Illuminate\Http\Response
+     */
+    public function search($name): Collection
+    {
+        return Product::where('name', 'like', '%' . $name . '%')->get();
     }
 }
