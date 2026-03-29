@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Formularz Walidacji</title>
+    </head>
+
+    <body>
+        <form action="/form" method="POST">
+            <label>Nazwisko (3-25 znaków, same litery):</label><br />
+            <input type="text" name="nazwisko" /><br /><br />
+
+            <label>Email:</label><br />
+            <input type="text" name="email" /><br /><br />
+
+            <label>Wiek (0-110):</label><br />
+            <input type="text" name="wiek" /><br /><br />
+
+            <input type="submit" value="Wyślij dane">
+        </form>
+    </body>
+
+</html>

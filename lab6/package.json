@@ -1,0 +1,22 @@
+{
+	"name": "express-serwer",
+	"version": "1.0.0",
+	"description": "Prosta aplikacja serwerowa oparta na szkielecie Express",
+	"main": "index3.js",
+	"scripts": {
+		"start": "node index3.js",
+		"dev": "nodemon index3.js"
+	},
+	"keywords": [
+		"express",
+		"serwer"
+	],
+	"author": "Jan",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^5.2.1",
+		"express-validator": "^7.3.1",
+		"nodemon": "^3.1.14",
+		"validator": "^13.15.26"
+	}
+}

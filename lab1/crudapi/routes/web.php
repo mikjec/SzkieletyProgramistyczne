@@ -16,9 +16,8 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 //Trasy chronione
-Route::group(['middleware' => ['auth:sanctum']], function () {
-    Route::post('/products', [ProductController::class, 'store']);
-    Route::put('/products/{id}', [ProductController::class, 'update']);
-    Route::delete('/products/{id}', [ProductController::class, 'destroy']);
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-});
+
+Route::post('/products', [ProductController::class, 'store']);
+Route::put('/products/{id}', [ProductController::class, 'update']);
+Route::delete('/products/{id}', [ProductController::class, 'destroy']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
