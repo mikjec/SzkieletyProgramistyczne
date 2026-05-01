@@ -1,0 +1,24 @@
+.karta {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+	font-family: Arial, sans-serif;
+}
+
+.karta-row {
+	border-bottom: 1px solid #ddd;
+}
+
+.karta-row.header {
+	background-color: #f5f5f5;
+	font-weight: bold;
+}
+
+.karta-col {
+	padding: 10px;
+	text-align: left;
+}
+
+.karta-row:hover {
+	background-color: #f9f9f9;
+}

@@ -47,7 +47,6 @@ app.post(
 			.bail()
 			.isLength({ min: 3, max: 25 })
 			.withMessage('Nazwisko musi mieć od 3 do 25 znaków!')
-			.isAlpha()
 			.withMessage('Nazwisko może zawierać tylko litery alfabetu!')
 			.bail(),
 

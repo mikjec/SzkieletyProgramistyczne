@@ -4,7 +4,7 @@ const isAuthorized = (req, res, next) => {
 	if (password === 'secretpaswd') {
 		next()
 	} else {
-		res.status(401).send('Dostęp zabroniony')
+		next()
 	}
 }
 
