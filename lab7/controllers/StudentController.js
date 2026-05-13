@@ -48,7 +48,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.get('/delete/:id', (req, res) => {
-	Student.findByIdAndRemove(req.params.id)
+	Student.findByIdAndDelete(req.params.id)
 		.then(doc => {
 			res.redirect('/list')
 		})
